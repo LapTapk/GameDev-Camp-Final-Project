@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [HideInInspector] public Vector2 LookingPoint;
+    [HideInInspector] public bool IsAiming;
     private Vector2 _movement = Vector2.zero;
     public Vector2 Movement
     {
@@ -20,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed, _aimingSpeedReduce;
+    private float AimingSpeedReduce => (IsAiming ? _aimingSpeedReduce : 1);
     private Rigidbody2D _rb;
 
     private void Awake()
@@ -36,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.velocity = _movement * _speed;
+        _rb.velocity = _movement * (_speed * AimingSpeedReduce);
         MoveCamera();
     }
 
