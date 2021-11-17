@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8214934025952322892}
   - component: {fileID: 7249957087615806346}
   - component: {fileID: 8784646983731274075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,8 +193,8 @@ GameObject:
   - component: {fileID: 6085307582328732242}
   - component: {fileID: 2746153955318390035}
   - component: {fileID: 5854223447101109932}
-  m_Layer: 0
-  m_Name: Bullet
+  m_Layer: 6
+  m_Name: PistolBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 50
-  _damage: 10
+  _damage: 4
 --- !u!50 &2746153955318390035
 Rigidbody2D:
   serializedVersion: 4

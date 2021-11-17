@@ -1,17 +1,18 @@
 using UnityEngine;
 
-public class MachineGun : Weapon
+public class SmallArms : Weapon
 {
     protected override void AimedShoot()
     {
         Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
     }
+
     protected override void HipShoot()
     {
-        //TODO
         var rotation = shotPoint.eulerAngles;
-        var inLeftDeviation = Mathf.Ceil(Random.value * 2 - 1);
-        //rotation.z -= hipSpreadSemiAngle * (inLeftDeviation ? 1 : -1);
+        Random.InitState((int)(Time.deltaTime * 10000));
+        var padding = Random.value * 2 - 1;
+        rotation.z -= hipSpreadSemiAngle * padding;
 
         Instantiate(bulletPrefab, shotPoint.position, Quaternion.Euler(rotation));
     }

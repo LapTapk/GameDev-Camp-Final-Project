@@ -23,10 +23,12 @@ public class PlayerInput : MonoBehaviour
         if (ReloadActivated)
             _shooter.CurrentWeapon.TryReload();
 
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
             _shooter.SwitchWeapons(0);
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
             _shooter.SwitchWeapons(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            _shooter.SwitchWeapons(2);
 
         SetMovement();
         SetLookingPoint();
