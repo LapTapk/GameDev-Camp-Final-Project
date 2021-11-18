@@ -10,6 +10,9 @@ public abstract class Weapon : MonoBehaviour
     protected float lastShotTime;
     protected int magAmount, bandolierAmount;
 
+    [Space]
+    protected float gizmosSpreadDistance;
+
     protected void Awake()
     {
         magAmount = maxMagAmount;
